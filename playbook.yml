@@ -1,0 +1,28 @@
+---
+# pip install -U pip, ansible
+# ansible-galaxy install --role-file requirements.yml --roles-path roles
+- hosts: localhost
+
+  vars:
+
+  roles:
+  - role: geerlingguy.dotfiles
+    dotfiles_repo: "https://github.com/BrashEndeavours/dotfiles"
+    dotfiles_files:
+    - .bashrc
+    - .gitconfig
+    - .vimrc
+
+  - role: cdriehuys.virtualenv
+    venv: /opt/virtualenvs/venv3    # Path to virtualenv
+    venv_packages: [python3]        # List of packages required to create the virtualenv
+    venv_python: python3            # Version of python to create the virtualenv with
+    venv_owner: root
+    venv_group: root
+
+  - role: cdriehuys.virtualenv
+    venv: /opt/virtualenvs/venv2    # Path to virtualenv
+    venv_packages: [python2]        # List of packages required to create the virtualenv
+    venv_python: python3            # Version of python to create the virtualenv with
+    venv_owner: root
+    venv_group: root
