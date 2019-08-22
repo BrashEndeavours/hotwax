@@ -10,7 +10,7 @@ lint:
 platforms:
   - name: bootstrap-kali
     image: kalilinux/kali-linux-docker
-    pre_build_image: yes
+    pre_build_image: true
 provisioner:
   name: ansible
   playbooks:
