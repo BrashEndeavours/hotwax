@@ -23,8 +23,8 @@ install:
 
 script:
   - ansible-playbook ./playbook.yml --connection=local --syntax-check
-  - ansible-playbook ./playbook.yml --connection=local --sudo
-  - "ansible-playbook ./playbook.yml --connection=local --sudo | tee /tmp/output.txt; grep -q 'changed=0.*failed=0' /tmp/output.txt &amp;&amp; (echo 'Idempotence test: pass' &amp;&amp; exit 0) || (echo 'Idempotence test: fail' &amp;&amp; exit 1)"
+  - ansible-playbook ./playbook.yml --connection=local
+  - "ansible-playbook ./playbook.yml --connection=local | tee /tmp/output.txt; grep -q 'changed=0.*failed=0' /tmp/output.txt &amp;&amp; (echo 'Idempotence test: pass' &amp;&amp; exit 0) || (echo 'Idempotence test: fail' &amp;&amp; exit 1)"
 
 
 notifications:
