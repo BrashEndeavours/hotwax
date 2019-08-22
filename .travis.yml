@@ -21,7 +21,7 @@ install:
   - if [ "${version}" = "devel" ] ; then pip install git+https://github.com/ansible/ansible.git@devel ; fi
 
 script:
-  - ansible-playbook -i ./playbook.yml --syntax-check
+  - ansible-playbook ./playbook.yml --syntax-check
 
 
 notifications:
