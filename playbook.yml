@@ -7,6 +7,7 @@
 
   roles:
     - role: geerlingguy.dotfiles
+      become: false
       dotfiles_repo: "https://github.com/BrashEndeavours/dotfiles"
       dotfiles_files:
         - .bashrc
