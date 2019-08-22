@@ -1,0 +1,102 @@
+---
+sudo: required
+language: python
+services: docker
+
+env:
+  #- version=">=2.7,<2.8" distro="alpine-latest"
+  #- version="" distro="alpine-latest"
+  #- version="devel" distro="alpine-latest"
+  #- version=">=2.7,<2.8" distro="alpine-edge"
+  #- version="" distro="alpine-edge"
+  #- version="devel" distro="alpine-edge"
+  #- version=">=2.7,<2.8" distro="archlinux"
+  #- version="" distro="archlinux"
+  #- version="devel" distro="archlinux"
+  #- version=">=2.7,<2.8" distro="centos-6"
+  #- version="" distro="centos-6"
+  #- version="devel" distro="centos-6"
+  #- version=">=2.7,<2.8" distro="centos-latest"
+  #- version="" distro="centos-latest"
+  #- version="devel" distro="centos-latest"
+  #- version=">=2.7,<2.8" distro="debian-stable"
+  #- version="" distro="debian-stable"
+  #- version="devel" distro="debian-stable"
+  #- version=">=2.7,<2.8" distro="debian-unstable"
+  #- version="" distro="debian-unstable"
+  #- version="devel" distro="debian-unstable"
+  #- version=">=2.7,<2.8" distro="fedora-latest"
+  #- version="" distro="fedora-latest"
+  #- version="devel" distro="fedora-latest"
+  #- version=">=2.7,<2.8" distro="fedora-rawhide"
+  #- version="" distro="fedora-rawhide"
+  #- version="devel" distro="fedora-rawhide"
+  - version=">=2.7,<2.8" distro="kali"
+  - version="" distro="kali"
+  - version="devel" distro="kali"
+  #- version=">=2.7,<2.8" distro="opensuse-leap"
+  #- version="" distro="opensuse-leap"
+  #- version="devel" distro="opensuse-leap"
+  # - version=">=2.7,<2.8" distro="redhat-7"
+  # - version="" distro="redhat-7"
+  # - version="devel" distro="redhat-7"
+  # - version=">=2.7,<2.8" distro="redhat-latest"
+  # - version="" distro="redhat-latest"
+  # - version="devel" distro="redhat-latest"
+  #- version=">=2.7,<2.8" distro="ubuntu-rolling"
+  #- version="" distro="ubuntu-rolling"
+  #- version="devel" distro="ubuntu-rolling"
+  #- version=">=2.7,<2.8" distro="ubuntu-latest"
+  #- version="" distro="ubuntu-latest"
+  #- version="devel" distro="ubuntu-latest"
+  #- version=">=2.7,<2.8" distro="ubuntu-devel"
+  #- version="" distro="ubuntu-devel"
+  #- version="devel" distro="ubuntu-devel"
+
+matrix:
+  allow_failures:
+    #- env: version=">=2.7,<2.8" distro="alpine-edge"
+    #- env: version="" distro="alpine-edge"
+    #- env: version="devel" distro="alpine-edge"
+    #- env: version="devel" distro="alpine-latest"
+    #- env: version="devel" distro="archlinux"
+    #- env: version="devel" distro="centos-6"
+    #- env: version="devel" distro="centos-latest"
+    #- env: version="devel" distro="debian-stable"
+    #- env: version=">=2.7,<2.8" distro="debian-unstable"
+    #- env: version="" distro="debian-unstable"
+    #- env: version="devel" distro="debian-unstable"
+    #- env: version="devel" distro="fedora-latest"
+    #- env: version=">=2.7,<2.8" distro="fedora-rawhide"
+    #- env: version="" distro="fedora-rawhide"
+    #- env: version="devel" distro="fedora-rawhide"
+    #- env: version=">=2.7,<2.8" distro="gentoo"
+    #- env: version="" distro="gentoo"
+    #- env: version="devel" distro="gentoo"
+    #- env: version="devel" distro="gentoo"
+    - env: version="devel" distro="kali"
+    #- env: version="devel" distro="opensuse-leap"
+    #- version="devel" distro="redhat-7"
+    #- version="devel" distro="redhat-latest"
+    #- env: version="devel" distro="ubuntu-rolling"
+    #- env: version=">=2.7,<2.8" distro="ubuntu-devel"
+    #- env: version="" distro="ubuntu-devel"
+    #- env: version="devel" distro="ubuntu-devel"
+    #- env: version="devel" distro="ubuntu-latest"
+
+cache:
+  - pip
+
+install:
+  - pip install --upgrade pip
+  - if [ "${version}" != "devel" ] ; then pip install ansible"${version}" ; fi
+  - if [ "${version}" = "devel" ] ; then pip install git+https://github.com/ansible/ansible.git@devel ; fi
+  - pip install molecule
+  - pip install docker
+
+script:
+  - if [ "${expectation}" = "fail" ] ; then ! molecule test --scenario-name "${distro}" ; else molecule test --scenario-name "${distro}" ; fi
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  email: false

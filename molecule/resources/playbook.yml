@@ -1,0 +1,12 @@
+---
+- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: no
+
+  roles:
+    - hotwax
+
+  tasks:
+    - name: test connection
+      ping:
