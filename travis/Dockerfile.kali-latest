@@ -1,0 +1,17 @@
+FROM kalilinux/kali-linux-docker:latest
+
+RUN apt-get update && apt-get dist-upgrade -y
+
+RUN apt-get update && apt-get install -y \
+    git \
+    python3 \
+    python3-pip \
+    python2 \
+    python2-pip
+
+RUN python3 -m pip install -U pip ansible
+RUN python2 -m pip install -U pip ansible
+
+RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
+
+ENTRYPOINT ["/sbin/init"]

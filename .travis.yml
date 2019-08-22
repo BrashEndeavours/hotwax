@@ -3,29 +3,12 @@ sudo: required
 language: python
 services: docker
 
-env:
-  - image: "kalilinux/kali-linux-docker"
-    tag: "latest"
-    version: ">=2.7,<2.8"
-  - image: "kalilinux/kali-linux-docker"
-    tag: "latest"
-    version: ""
-  - image: "kalilinux/kali-linux-docker"
-    tag: "latest"
-    version: "devel"
-
-matrix:
-  allow_failures:
-    - env: 
-      image: "kalilinux/kali-linux-docker"
-      version: "devel"
-
 cache:
   - pip
 
 before_install:
-  - 'sudo docker pull ${image}:${tag}'
-  - 'sudo docker build --no-cache --rm --file=travis/Dockerfile.${image}-${tag} --tag=${image}-${tag}:ansible travis'
+  - 'sudo docker pull kalilinux/kali-linux-docker:latest'
+  - 'sudo docker build --no-cache --rm --file=travis/Dockerfile.kali-latest --tag=kali-latest:ansible travis'
 
 install:
   - container_id=$(mktemp)
