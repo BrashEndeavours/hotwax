@@ -4,27 +4,47 @@ language: python
 services: docker
 
 env:
-  - version=">=2.7,<2.8" distro="kali"
-  - version="" distro="kali"
-  - version="devel" distro="kali"
+  - image: "kalilinux/kali-linux-docker"
+    tag: "latest"
+    version: ">=2.7,<2.8"
+  - image: "kalilinux/kali-linux-docker"
+    tag: "latest"
+    version: ""
+  - image: "kalilinux/kali-linux-docker"
+    tag: "latest"
+    version: "devel"
 
 matrix:
   allow_failures:
-    - env: version="devel" distro="kali"
+    - env: 
+      image: "kalilinux/kali-linux-docker"
+      version: "devel"
 
 cache:
   - pip
 
+before_install:
+  - 'sudo docker pull ${image}:${tag}'
+  - 'sudo docker build --no-cache --rm --file=travis/Dockerfile.${image}-${tag} --tag=${image}-${tag}:ansible travis'
+
 install:
-  - pip install --upgrade pip
-  - if [ "${version}" != "devel" ] ; then pip install ansible"${version}" ; fi
-  - if [ "${version}" = "devel" ] ; then pip install git+https://github.com/ansible/ansible.git@devel ; fi
-  - ansible-galaxy install --role-file requirements.yml --roles-path roles
+  - container_id=$(mktemp)
+  - 'sudo docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --volume="${PWD}":/root/hotwax:ro ${image}-${tag}:ansible > "${container_id}"'
+
+  - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 pip install --upgrade pip'
+  # - pip install --upgrade pip
+  - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 if [ "${version}" != "devel" ] ; then pip install ansible"${version}" ; fi'
+  # - if [ "${version}" != "devel" ] ; then pip install ansible"${version}" ; fi
+  - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 if [ "${version}" = "devel" ] ; then pip install git+https://github.com/ansible/ansible.git@devel ; fi'
+  # - if [ "${version}" = "devel" ] ; then pip install git+https://github.com/ansible/ansible.git@devel ; fi
+  - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-galaxy install --role-file /root/hotwax/requirements.yml --roles-path roles'
+  # - ansible-galaxy install --role-file requirements.yml --roles-path roles
 
 script:
-  - ansible-playbook ./playbook.yml --connection=local --syntax-check -vvvvv
-  - ansible-playbook ./playbook.yml --connection=local --sudo -vvvvv
-  - "ansible-playbook ./playbook.yml --connection=local --sudo | tee /tmp/output.txt; grep -q 'changed=0.*failed=0' /tmp/output.txt &amp;&amp; (echo 'Idempotence test: pass' &amp;&amp; exit 0) || (echo 'Idempotence test: fail' &amp;&amp; exit 1)"
+  - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /root/hotwax/playbook.yml --syntax-check'
+  # - ansible-playbook ./playbook.yml --connection=local --syntax-check
+  # - ansible-playbook ./playbook.yml --connection=local --sudo
+  # - "ansible-playbook ./playbook.yml --connection=local --sudo | tee /tmp/output.txt; grep -q 'changed=0.*failed=0' /tmp/output.txt &amp;&amp; (echo 'Idempotence test: pass' &amp;&amp; exit 0) || (echo 'Idempotence test: fail' &amp;&amp; exit 1)"
 
 
 notifications:
