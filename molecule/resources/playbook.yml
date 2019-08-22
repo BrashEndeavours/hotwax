@@ -1,6 +1,6 @@
 ---
 - name: Converge
-  hosts: all
+  hosts: localhost
   become: yes
   gather_facts: no
 
