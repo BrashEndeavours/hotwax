@@ -19,6 +19,7 @@ install:
   - pip install --upgrade pip
   - if [ "${version}" != "devel" ] ; then pip install ansible"${version}" ; fi
   - if [ "${version}" = "devel" ] ; then pip install git+https://github.com/ansible/ansible.git@devel ; fi
+  - ansible-galaxy install --role-file requirements.yml --roles-path roles
 
 script:
   - ansible-playbook ./playbook.yml --syntax-check
