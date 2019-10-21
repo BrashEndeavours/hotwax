@@ -1,0 +1,23 @@
+---
+# https://github.com/Tib3rius/XSStrike
+- name: Copy XSStrike from repository
+  git:
+    #Temporary, until PR for gobuster v3 is brought into main repo.
+    repo: "https://github.com/s0md3v/XSStrike"
+    dest: /opt/xsstrike
+    update: yes 
+    force: yes
+
+- name: Install XSStrike
+  pip: 
+    executable: pip3
+    requirements: /opt/xsstrike/requirements.txt
+
+- name: Set XSStrike aliases
+  set_fact:
+    xsstrike_aliases: 
+    - { alias: 'xsstrike', command: 'python3 /opt/xsstrike/xsstrike.py' }
+
+- name: Merge XSStrike aliases
+  set_fact:
+    bash_aliases: "{{ bash_aliases + xsstrike_aliases }}"

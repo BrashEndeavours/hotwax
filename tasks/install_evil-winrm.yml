@@ -1,0 +1,32 @@
+---
+# https://github.com/Hackplayers/evil-winrm
+- name: Install requiremnts
+  gem:
+    name: winrm
+    state: latest
+  gem:
+    name: winrm-fs
+    state: latest
+  gem:
+    name: colorize
+    state: latest
+  gem:
+    name: stringio
+    state: latest
+
+- name: Copy Evil-Winrm from repository
+  git:
+    #Temporary, until PR for gobuster v3 is brought into main repo.
+    repo: "https://github.com/Hackplayers/evil-winrm"
+    dest: /opt/evil-winrm
+    update: yes 
+    force: yes
+
+- name: Set evil-winrm aliases
+  set_fact:
+    evil-winrm_aliases: 
+    - { alias: 'evil-winrm', command: 'ruby /opt/evil-winrm/evil-winrm.rb' }
+
+- name: Merge evil-winrm aliases
+  set_fact:
+    bash_aliases: "{{ bash_aliases + evil-winrm_aliases }}"

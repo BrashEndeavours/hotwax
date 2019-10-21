@@ -41,6 +41,7 @@ ansible-playbook playbook.yml
 ## Tools installed:
  - [AutoRecon](https://github.com/Tib3rius/AutoRecon) - AutoRecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
  - [chisel](https://github.com/jpillora/chisel) - A fast TCP tunnel over HTTP
+ - [evil-winrm](https://github.com/Hackplayers/evil-winrm) - The ultimate WinRM shell for hacking/pentesting.
  - [gobuster](https://github.com/OJ/gobuster) - Directory/File, DNS and VHost busting tool written in Go
  - [LinEnum](https://github.com/rebootuser/LinEnum) - Local Linux Enumeration & Privilege Escalation Script 
  - [nishang](https://github.com/samratashok/nishang) - Framework and collection of scripts and payloads which enables usage of PowerShell for penetration testing.
@@ -54,6 +55,7 @@ ansible-playbook playbook.yml
  - [sshuttle](https://github.com/sshuttle/sshuttle) - Transparent proxy server that works as a poor man's VPN. Forwards over ssh. Doesn't require admin. Works with Linux and MacOS. Supports DNS tunneling.
  - [webshell](https://github.com/tennc/webshell) - This is a webshell open source project.
  - [Windows PHP Reverse Shell](https://github.com/Dhayalanb/windows-php-reverse-shell) - Simple php reverse shell implemented using binary, based on an webshell.
+ - [XSStrike](https://github.com/s0md3v/XSStrike) - Advanced XSS scanner
  - [OSCP Exam Report Template](https://github.com/whoisflynn/OSCP-Exam-Report-Template) - Modified template for the OSCP Exam
 
 ## Contributing

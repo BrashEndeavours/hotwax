@@ -22,6 +22,7 @@
 
   - include_tasks: tasks/install_AutoRecon.yml
   - include_tasks: tasks/install_chisel.yml
+  - include_tasks: tasks/install_evil-winrm.yml
   - include_tasks: tasks/install_gobuster.yml
   - include_tasks: tasks/install_gcc-multilib.yml
   - include_tasks: tasks/install_LinEnum.yml
@@ -38,6 +39,7 @@
   - include_tasks: tasks/install_sshuttle.yml
   - include_tasks: tasks/install_webshell.yml
   - include_tasks: tasks/install_wkhtmltopdf.yml
+  - include_tasks: tasks/install_xsstrike.yml
   - include_tasks: tasks/install_GEF.yml
   - include_tasks: tasks/install_pwntools.yml
   - include_tasks: tasks/update_polenum.yml
