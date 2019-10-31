@@ -1,8 +1,10 @@
 ---
 # https://github.com/Hackplayers/evil-winrm
-- name: Install requiremnts
+- name: Install gem
   apt:
     name: rubygems
+
+- name: Install gem packages
   gem:
     name: winrm
     state: latest
