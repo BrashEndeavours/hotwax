@@ -48,5 +48,6 @@
   - include_tasks: tasks/install_wkhtmltopdf.yml
   - include_tasks: tasks/install_xsstrike.yml
   - include_tasks: tasks/install_zauberfeder.yml
+  - include_tasks: tasks/install_crackmapexec.yml
 
   - include_tasks: tasks/add_aliases.yml

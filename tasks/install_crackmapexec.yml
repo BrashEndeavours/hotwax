@@ -1,0 +1,6 @@
+---
+# https://github.com/byt3bl33d3r/CrackMapExec
+- name: Ensure crackmapexec is installed (Kali).
+  apt:
+    name: "crackmapexec"
+    state: present
