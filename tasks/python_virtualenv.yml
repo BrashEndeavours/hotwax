@@ -1,4 +1,9 @@
 ---
+- name: Install python2.7
+  apt:
+    name: python2.7
+    state: present
+
 - name: Get Stouts.python
   command: ansible-galaxy install Stouts.python
   register: stouts

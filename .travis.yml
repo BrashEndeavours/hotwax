@@ -7,7 +7,7 @@ cache:
   - pip
 
 before_install:
-  - 'sudo docker pull kalilinux/kali-linux-docker:latest'
+  - 'sudo docker pull kalilinux/kali:latest'
   - 'sudo docker build --no-cache --rm --file=travis/Dockerfile.kali-latest --tag=kali-latest:ansible travis'
 
 install:
