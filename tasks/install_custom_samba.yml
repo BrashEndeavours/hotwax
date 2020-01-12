@@ -111,7 +111,7 @@
     - python-dbg
     - python-dev
     - python-dnspython
-    - python-gnupg
+      #- python-gnupg
     - python-iso8601
     - python-markdown
     - python-pexpect
