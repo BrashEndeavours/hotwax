@@ -1,0 +1,12 @@
+---
+# https://github.com/richlamdev/ssh-default-banners 
+- name: Ensure git is installed.
+  apt:
+    name: "git"
+    state: present
+
+- name: Copy ssh-default-banners from repository
+  git:
+    repo: "https://github.com/richlamdev/ssh-default-banners.git"
+    dest: "/opt/ssh-default-banners/"
+    update: yes

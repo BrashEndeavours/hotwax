@@ -69,7 +69,7 @@ ansible-playbook playbook.yml
  - [wce](https://www.ampliasecurity.com/research/windows-credentials-editor/) - A security tool to list logon sessions and add, change, list and delete associated credentials.
  - [Windows-Exploit-Suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester) - This tool compares a targets patch levels against the Microsoft vulnerability database in order to detect potential missing patches on the target.
  - [pyftpdlib](https://github.com/giampaolo/pyftpdlib) - Extremely fast and scalable Python FTP server library.  Spin up FTP Server with a one-liner.
-
+ - [ssh-os](https://github.com/richlamdev/ssh-default-banners) - Nmap Script that identifies Debian, Ubuntu, FreeBSD version based on default SSH banner response.
 
 ## Contributing
 
@@ -83,8 +83,8 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 
 * Want your name here? See CONTRIBUTING.md for details.
 
-* **Alec Mather-Shapiro (whoisflynn)** - *Added AutoRecon, Windows PHP Reverse Shell, and OSCP Exam Template** - [whoisflynn](https://github.com/whoisflynn)
-* **Richard Lam (richlamdev)** - *Added crackmapexec, WindowsExploits, exiftool, html2text, mingw-w64, msfpc, wce, windows-exploit-suggester, pyftpdlib, ssh-os.nse - [richhlamdev](https://github.com/richlamdev/)
+* **Alec Mather-Shapiro (whoisflynn)** - *Added AutoRecon, Windows PHP Reverse Shell, and OSCP Exam Template* - [whoisflynn](https://github.com/whoisflynn)
+* **Richard Lam (richlamdev)** - *Added crackmapexec, WindowsExploits, exiftool, html2text, mingw-w64, msfpc, wce, windows-exploit-suggester, pyftpdlib, ssh-os.nse* - [richhlamdev](https://github.com/richlamdev/)
 
 ## Acknowledgements
 
@@ -108,8 +108,17 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **Somdev Sangwan** - [Arjun](https://github.com/s0md3v/Arjun)
 * **ucki** - [zauberfeder](https://github.com/ucki)
 * **BloodHoundAD** - [BloodHound](https://github.com/BloodHoundAD)
+* **byt3bl33d3r** - [crackmapexec](https://github.com/byt3bl33d3r/CrackMapExec)
+* **abatchy17** - [WindowsExploits](https://github.com/abatchy17/WindowsExploits)
+* **exiftol** - [exiftool](https://github.com/exiftool/exiftool)
+* **Alir3z4** - [html2text](https://github.com/Alir3z4/html2text/)
+* **mingw-w64** - [mingw-w64](http://mingw-w64.org/doku.php)
+* **g0tmi1k** - [msfpc](https://github.com/g0tmi1k/msfpc)
+* **ampliasecurity.com** - [wce](https://www.ampliasecurity.com/research/windows-credentials-editor/)
+* **AonCyberLabs** - [Windows-Exploit-Suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
+* **giampaolo** - [pyftpdlib](https://github.com/giampaolo/pyftpdlib)
+* **richlamdev** - [ssh-os](https://github.com/richlamdev/ssh-default-banners)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-

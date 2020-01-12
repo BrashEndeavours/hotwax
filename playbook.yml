@@ -57,5 +57,6 @@
   - include_tasks: tasks/install_wce.yml
   - include_tasks: tasks/install_windows-exploit-suggester.yml
   - include_tasks: tasks/install_pyftpdlib.yml
+  - include_tasks: tasks/install_ssh-os.yml
 
   - include_tasks: tasks/add_aliases.yml
