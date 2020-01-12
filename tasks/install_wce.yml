@@ -1,0 +1,6 @@
+---
+# https://www.ampliasecurity.com/research/windows-credentials-editor/
+- name: Ensure wce is installed (Kali).
+  apt:
+    name: "wce"
+    state: present

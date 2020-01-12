@@ -49,5 +49,13 @@
   - include_tasks: tasks/install_xsstrike.yml
   - include_tasks: tasks/install_zauberfeder.yml
   - include_tasks: tasks/install_crackmapexec.yml
+  - include_tasks: tasks/install_WindowsExploits.yml
+  - include_tasks: tasks/install_exiftool.yml
+  - include_tasks: tasks/install_html2text.yml
+  - include_tasks: tasks/install_mingw-w64.yml
+  - include_tasks: tasks/install_msfpc.yml
+  - include_tasks: tasks/install_wce.yml
+  - include_tasks: tasks/install_windows-exploit-suggester.yml
+  - include_tasks: tasks/install_pyftpdlib.yml
 
   - include_tasks: tasks/add_aliases.yml

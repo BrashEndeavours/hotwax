@@ -1,0 +1,6 @@
+---
+# https://pypi.org/project/html2text/
+- name: Ensure html2text is installed (Kali).
+  apt:
+    name: "html2text"
+    state: present

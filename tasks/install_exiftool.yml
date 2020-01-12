@@ -1,0 +1,7 @@
+---
+# https://exiftool.org/
+# https://github.com/exiftool/exiftool
+- name: Ensure exiftool is installed (Kali).
+  apt:
+    name: "exiftool"
+    state: present

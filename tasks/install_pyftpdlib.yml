@@ -1,0 +1,8 @@
+---
+# https://github.com/giampaolo/pyftpdlib
+- name: Install pyftpdlib
+  pip: 
+    name:
+    - pyftpdlib
+    executable: pip2
+    state: latest

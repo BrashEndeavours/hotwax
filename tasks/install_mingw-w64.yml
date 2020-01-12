@@ -1,0 +1,7 @@
+---
+# http://mingw-w64.org/doku.php
+# git clone https://git.code.sf.net/p/mingw-w64/mingw-w64 mingw-w64-mingw-w64
+- name: Ensure mingw64-w64 is installed (Kali).
+  apt:
+    name: "mingw-w64"
+    state: present
