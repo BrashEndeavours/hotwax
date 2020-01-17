@@ -70,6 +70,7 @@ ansible-playbook playbook.yml
  - [Windows-Exploit-Suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester) - This tool compares a targets patch levels against the Microsoft vulnerability database in order to detect potential missing patches on the target.
  - [pyftpdlib](https://github.com/giampaolo/pyftpdlib) - Extremely fast and scalable Python FTP server library.  Spin up FTP Server with a one-liner.
  - [ssh-os](https://github.com/richlamdev/ssh-default-banners) - Nmap Script that identifies Debian, Ubuntu, FreeBSD version based on default SSH banner response.
+ - [empire](https://github.com/EmpireProject/Empire) - Empire is a post-exploitation framework that includes a pure-PowerShell2.0 Windows agent, and a pure Python 2.6/2.7 Linux/OS X agent.
 
 ## Contributing
 
@@ -118,6 +119,7 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **AonCyberLabs** - [Windows-Exploit-Suggester](https://github.com/AonCyberLabs/Windows-Exploit-Suggester)
 * **giampaolo** - [pyftpdlib](https://github.com/giampaolo/pyftpdlib)
 * **richlamdev** - [ssh-os](https://github.com/richlamdev/ssh-default-banners)
+* **harmj0y** - [empire](https://github.com/EmpireProject/Empire)
 
 ## License
 
