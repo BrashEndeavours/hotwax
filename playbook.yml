@@ -31,7 +31,7 @@
   - include_tasks: tasks/install_impacket.yml
   - include_tasks: tasks/install_linenum.yml
   - include_tasks: tasks/install_nishang.yml
-  - include_tasks: tasks/install_nmap.yml
+  #- include_tasks: tasks/install_nmap.yml
   - include_tasks: tasks/install_one-lin3r.yml
   - include_tasks: tasks/install_oscp_report_templates.yml
   - include_tasks: tasks/install_payloadsallthethings.yml
@@ -49,7 +49,7 @@
   - include_tasks: tasks/install_xsstrike.yml
   - include_tasks: tasks/install_zauberfeder.yml
   - include_tasks: tasks/install_crackmapexec.yml
-  - include_tasks: tasks/install_WindowsExploits.yml
+  - include_tasks: tasks/install_windowsexploits.yml
   - include_tasks: tasks/install_exiftool.yml
   - include_tasks: tasks/install_html2text.yml
   - include_tasks: tasks/install_mingw-w64.yml
@@ -58,5 +58,6 @@
   - include_tasks: tasks/install_windows-exploit-suggester.yml
   - include_tasks: tasks/install_pyftpdlib.yml
   - include_tasks: tasks/install_ssh-os.yml
+  - include_tasks: tasks/install_empire.yml
 
   - include_tasks: tasks/add_aliases.yml

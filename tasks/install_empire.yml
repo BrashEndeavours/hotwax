@@ -1,0 +1,12 @@
+---
+# https://github.com/EmpireProject/Empire
+- name: Ensure git is installed.
+  apt:
+    name: "git"
+    state: present
+
+- name: Copy Empire Shell from repository
+  git:
+    repo: "https://github.com/EmpireProject/Empire"
+    dest: /opt/Empire
+    update: yes
