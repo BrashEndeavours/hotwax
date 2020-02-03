@@ -61,7 +61,7 @@ ansible-playbook playbook.yml
  - [XSStrike](https://github.com/s0md3v/XSStrike) - Advanced XSS scanner
  - [zauberfeder](https://github.com/ucki/zauberfeder) - A LaTex reporting template.
  - [crackmapexec](https://github.com/byt3bl33d3r/CrackMapExec) - A swiss army knife for pentesting networks.
- - [WindowsExploits](https://github.com/abatchy17/WindowsExploits) - Precompiled Windows Exploits.
+ - [windows-kernel-exploits](https://github.com/SecWiki/windows-kernel-exploits) - Precompiled Windows Exploits.
  - [exiftool](https://github.com/exiftool/exiftool) - ExifTool meta information reader/writer.  Great for viewing and manipulating exif-data.
  - [html2text](https://github.com/Alir3z4/html2text/) - Convert HTML to clean, easy-to-read plain ASCII text.
  - [mingw-w64](http://mingw-w64.org/doku.php) - GCC for Windows 64 & 32 bits.
@@ -71,6 +71,7 @@ ansible-playbook playbook.yml
  - [pyftpdlib](https://github.com/giampaolo/pyftpdlib) - Extremely fast and scalable Python FTP server library.  Spin up FTP Server with a one-liner.
  - [ssh-os](https://github.com/richlamdev/ssh-default-banners) - Nmap Script that identifies Debian, Ubuntu, FreeBSD version based on default SSH banner response.
  - [empire](https://github.com/EmpireProject/Empire) - Empire is a post-exploitation framework that includes a pure-PowerShell2.0 Windows agent, and a pure Python 2.6/2.7 Linux/OS X agent.
+ - [medusa](http://foofus.net/goons/jmk/medusa/medusa.html) - Medusa is a speedy, parallel, modular login brute-forcer.  Similar to ncrack and Hydra.
 
 ## Contributing
 
@@ -85,7 +86,7 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * Want your name here? See CONTRIBUTING.md for details.
 
 * **Alec Mather-Shapiro (whoisflynn)** - *Added AutoRecon, Windows PHP Reverse Shell, and OSCP Exam Template* - [whoisflynn](https://github.com/whoisflynn)
-* **Richard Lam (richlamdev)** - *Added crackmapexec, WindowsExploits, exiftool, html2text, mingw-w64, msfpc, wce, windows-exploit-suggester, pyftpdlib, ssh-os.nse* - [richhlamdev](https://github.com/richlamdev/)
+* **Richard Lam (richlamdev)** - *Added crackmapexec, windows-kernel-exploits, exiftool, html2text, mingw-w64, msfpc, wce, windows-exploit-suggester, pyftpdlib, ssh-os.nse, medusa* - [richhlamdev](https://github.com/richlamdev/)
 
 ## Acknowledgements
 
@@ -120,6 +121,7 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **giampaolo** - [pyftpdlib](https://github.com/giampaolo/pyftpdlib)
 * **richlamdev** - [ssh-os](https://github.com/richlamdev/ssh-default-banners)
 * **harmj0y** - [empire](https://github.com/EmpireProject/Empire)
+* **foofus** - [foofus.net](http://foofus.net/goons/jmk/medusa/medusa.html)
 
 ## License
 

@@ -1,0 +1,9 @@
+---
+- set_fact:
+    homefolder: "{{'/home/' + username + '/'}}"
+  when: "{{username != 'root'}}"
+
+- set_fact:
+    homefolder: "/root/"
+  when: "{{username == 'root'}}"
+  

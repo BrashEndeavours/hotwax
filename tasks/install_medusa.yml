@@ -1,0 +1,5 @@
+---
+- name: Ensure Medusa is installed (Kali).
+  apt:
+    name: "medusa"
+    state: present
