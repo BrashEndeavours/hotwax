@@ -10,6 +10,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
+* Kali Linux 2019.4 or older.  (Presently, will not work on Kali LInux 2020.1 or newer, due to change from default root account configuration to non-root user account configuration. To be fixed in near future.)
+
 * Git
 * Ansible
 
