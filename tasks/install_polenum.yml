@@ -1,18 +1,5 @@
 ---
 # Per https://forums.offensive-security.com/showthread.php?10243-4-3-2-enum4linux-errors-in-Kali-Linux/page2
-- name: Ensure enum4linux is installed (Kali).
-  apt:
-    name: "enum4linux"
-    state: present
-
-- name: Update enum4linux
-  get_url:
-    url: https://raw.githubusercontent.com/BrashEndeavours/enum4linux/master/enum4linux.pl
-    validate_certs: no
-    dest: /usr/share/enum4linux/
-    mode: "555"
-    owner: "root"
-
 - name: Create link for polenum.py
   file:
     src: /usr/bin/polenum

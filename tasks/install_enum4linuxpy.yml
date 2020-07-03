@@ -1,0 +1,33 @@
+---
+# https://github.com/0v3rride/Enum4LinuxPy
+- name: Ensure git is installed.
+  apt:
+    name: "git"
+    state: present
+
+- name: Copy Enum4LinuxPy from repository
+  git:
+    repo: https://github.com/0v3rride/Enum4LinuxPy
+    dest: /opt/Enum4LinuxPy
+    update: yes 
+    force: yes
+
+- name: Install Enum4LinuxPy
+  pip: 
+    executable: pip3
+    requirements: /opt/Enum4LinuxPy/requirements.txt
+
+- name: Adjust autorecon config to use enum4linuxpy
+  replace:
+    path: /opt/autorecon/config/service-scans.toml
+    regexp: (enum4linux)
+    replace: enum4linuxpy
+
+- name: Set Enum4LinuxPy aliases
+  set_fact:
+    enum4linux_aliases: 
+    - { alias: 'enum4linuxpy', command: 'python3 /opt/Enum4LinuxPy/Enum4LinuxPy.py' }
+
+- name: Merge Enum4LinuxPy aliases
+  set_fact:
+    bash_aliases: "{{ bash_aliases + enum4linux_aliases }}"

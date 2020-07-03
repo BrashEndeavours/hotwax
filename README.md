@@ -38,13 +38,12 @@ ansible-playbook playbook.yml
 
 ## Tools updated:
  - [Samba 4.10.8 (smbclient,rpcclient,nmblookup](https://github.com/samba-team/samba) - Patched to fix issues with polenum, enum4linux, and restoring smbclient connection output.
- - [enum4linux](https://github.com/portcullislabs/enum4linux) - Fix minor parsing issues. Updates temporarily included by BrashEndeavours fork, until PR is merged.
 
 ## Tools installed:
  - [Arjun](https://github.com/s0md3v/Arjun) - Arjun is an HTTP parameter discovery suite.
  - [AutoRecon](https://github.com/Tib3rius/AutoRecon) - AutoRecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
  - [BloodHound](https://github.com/BloodHoundAD/BloodHound) - Six Degrees of Domain Admin.
- - [chisel](https://github.com/jpillora/chisel) - A fast TCP tunnel over HTTP
+ - [chisel](https://github.com/jpillora/chisel) - A fast TCP tunnel over HTTP.
  - [evil-winrm](https://github.com/Hackplayers/evil-winrm) - The ultimate WinRM shell for hacking/pentesting.
  - [gobuster](https://github.com/OJ/gobuster) - Directory/File, DNS and VHost busting tool written in Go
  - [LinEnum](https://github.com/rebootuser/LinEnum) - Local Linux Enumeration & Privilege Escalation Script 
@@ -74,6 +73,7 @@ ansible-playbook playbook.yml
  - [ssh-os](https://github.com/richlamdev/ssh-default-banners) - Nmap Script that identifies Debian, Ubuntu, FreeBSD version based on default SSH banner response.
  - [empire](https://github.com/EmpireProject/Empire) - Empire is a post-exploitation framework that includes a pure-PowerShell2.0 Windows agent, and a pure Python 2.6/2.7 Linux/OS X agent.
  - [medusa](http://foofus.net/goons/jmk/medusa/medusa.html) - Medusa is a speedy, parallel, modular login brute-forcer.  Similar to ncrack and Hydra.
+ - [PEASS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite) - These tools search for possible local privilege escalation paths that you could exploit and print them to you with nice colors so you can recognize the misconfigurations easily.
 
 ## Contributing
 
@@ -124,6 +124,8 @@ Please read [CONTRIBUTING.md](https://github.com/BrashEndeavours/hotwax/blob/mas
 * **richlamdev** - [ssh-os](https://github.com/richlamdev/ssh-default-banners)
 * **harmj0y** - [empire](https://github.com/EmpireProject/Empire)
 * **foofus** - [foofus.net](http://foofus.net/goons/jmk/medusa/medusa.html)
+* **0v3rride** - [Enum4LinuxPy](https://github.com/0v3rride/Enum4LinuxPy)
+* **Carlos Polop** - [PEASS](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite) - These tools search for possible local privilege escalation paths that you could exploit and print them to you with nice colors so you can recognize the misconfigurations easily.
 
 ## License
 
