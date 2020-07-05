@@ -28,7 +28,7 @@
 
 - name: Remove the SNMP configuration.
   replace:
-    path: /opt/autorecon/config/service-scans.toml
+    path: /opt/autorecon/src/autorecon/config/service-scans-default.toml
     after: '\[snmp\]'
     before: '\[telnet\]'
     regexp: '^(.+)$'
@@ -36,7 +36,7 @@
 
 - name: Add new SNMP configuration.
   blockinfile:
-    path: /opt/autorecon/config/service-scans.toml      
+    path: /opt/autorecon/src/autorecon/config/service-scans-default.toml      
     insertafter: '\[snmp\]' 
     block: |
       

@@ -1,6 +1,6 @@
 ---
 - name: Converge
-  hosts: localhost
+  hosts: all
   become: yes
   gather_facts: yes
 
@@ -22,17 +22,17 @@
   - include_tasks: tasks/install_arjun.yml
   - include_tasks: tasks/install_bloodhound.yml
   - include_tasks: tasks/install_chisel.yml
-  - include_tasks: tasks/install_custom_samba.yml
+  #- include_tasks: tasks/install_custom_samba.yml
   - include_tasks: tasks/install_enum4linuxpy.yml
   - include_tasks: tasks/install_evil-winrm.yml
   - include_tasks: tasks/install_gcc-multilib.yml
   - include_tasks: tasks/install_git.yml
-  - include_tasks: tasks/install_gef.yml
+  #- include_tasks: tasks/install_gef.yml
   - include_tasks: tasks/install_gobuster.yml
   - include_tasks: tasks/install_impacket.yml
   - include_tasks: tasks/install_linenum.yml
   - include_tasks: tasks/install_nishang.yml
-  - include_tasks: tasks/install_nmap.yml
+  #- include_tasks: tasks/install_nmap.yml
   - include_tasks: tasks/install_one-lin3r.yml
   - include_tasks: tasks/install_oscp_report_templates.yml
   - include_tasks: tasks/install_payloadsallthethings.yml

@@ -13,8 +13,10 @@
 
 - name: Install sherlock
   pip: 
-    executable: pip3
+    #executable: pip3
     requirements: /opt/sherlock/requirements.txt
+    virtualenv: /opt/sherlock/venv
+    virtualenv_python: python3
 
 - name: Set sherlock aliases
   set_fact:

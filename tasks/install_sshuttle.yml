@@ -1,14 +1,17 @@
 ---
-- name: Ensure sshuttle is installed (Kali).
+# https://github.com/sshuttle/sshuttle
+- name: Ensure git is installed.
   apt:
-    name: "sshuttle"
+    name: "git"
     state: present
 
-# - name: Set sshuttle aliases
-#   set_fact:
-#     sshuttle_aliases: 
-#     - { alias: '', command: '' }
+- name: Copy sshuttle from repository
+  git:
+    repo: "https://github.com/sshuttle/sshuttle"
+    dest: /opt/sshuttle
+    update: yes
 
-# - name: Merge git aliases
-#   set_fact:
-#     bash_aliases: "{{ bash_aliases + sshuttle_aliases }}"
+- name: Install sshuttle via setup.py
+  shell:
+    chdir: /opt/sshuttle
+    cmd: sudo ./setup.py install

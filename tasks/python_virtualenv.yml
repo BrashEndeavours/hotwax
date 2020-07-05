@@ -4,6 +4,13 @@
     name: python2.7
     state: present
 
+- name: Install pip and pip3
+  apt:
+    state: latest
+    pkg:
+      - python-pip
+      - python3-pip
+
 - name: Get Stouts.python
   command: ansible-galaxy install Stouts.python
   register: stouts

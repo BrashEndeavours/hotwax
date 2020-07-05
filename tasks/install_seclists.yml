@@ -10,3 +10,4 @@
     repo: "https://github.com/danielmiessler/SecLists.git"
     dest: "/usr/share/seclists/"
     update: yes
+    force: yes
