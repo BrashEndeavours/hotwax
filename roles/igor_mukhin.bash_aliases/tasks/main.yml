@@ -1,0 +1,20 @@
+---
+
+- name: Bash aliases | Add aliases
+  lineinfile:
+    dest: "{{ bash_aliases_path }}"
+    create: yes
+    mode: 0644
+    line: 'alias {{ item.alias }}="{{ item.command }}"'
+    regexp: "^alias {{ item.alias }}="
+  with_items: "{{ bash_aliases }}"
+  when: bash_aliases != false
+
+- name: Bash aliases | Add extra
+  lineinfile:
+    dest: "{{ bash_aliases_path }}"
+    create: yes
+    mode: 0644
+    line: "{{ item }}"
+  with_items: "{{ bash_aliases_extra }}"
+  when: bash_aliases_extra != false

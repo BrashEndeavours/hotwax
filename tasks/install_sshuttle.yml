@@ -10,6 +10,13 @@
     repo: "https://github.com/sshuttle/sshuttle"
     dest: /opt/sshuttle
     update: yes
+    force: yes
+
+- name: Force python3 as the default interpreter for sshuttle
+  lineinfile:
+    path: /opt/sshuttle/setup.py
+    regexp: "#!/usr/bin/env python"
+    line: "#!/usr/bin/python3"
 
 - name: Install sshuttle via setup.py
   shell:

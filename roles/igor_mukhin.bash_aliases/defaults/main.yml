@@ -1,0 +1,9 @@
+---
+
+bash_aliases_path: "~/.bash_aliases"
+
+bash_aliases: false
+
+bash_aliases_extra: false
+# - alias sf="php app/console"
+# - alias sflg="sf list|grep"

@@ -1,0 +1,9 @@
+---
+
+- name: Install python
+  yum: name=python{{item}} state=present enablerepo={{python_yum_enablerepo or None}} disablerepo={{python_yum_disablerepo or None}}
+  with_items: "{{ python_versions }}"
+
+- name: Install python-dev
+  yum: name=python{{item}}-devel state=present enablerepo={{python_yum_enablerepo or None}} disablerepo={{python_yum_disablerepo or None}}
+  with_items: "{{ python_versions }}"
