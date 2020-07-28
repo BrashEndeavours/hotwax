@@ -11,6 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * Kali Linux 2019.4 or older.  (Presently, will not work on Kali LInux 2020.1 or newer, due to change from default root account configuration to non-root user account configuration. To be fixed in near future.)
+* **UPDATE** Modified to work on Kali Linux 2020.2a+ See below instructions. (However these changes have not been tested on 2019.4 or older versions and may not longer work)
 
 * Git
 * Ansible
@@ -33,7 +34,14 @@ Run the playbook
 
 ```
 cd hotwax
+
+#for Kali Linux 2019.4 or older:
 ansible-playbook playbook.yml
+
+#for Kali Linux 2020.2a and newer (executed with user part of sudo group, default for "kali" username):
+ansible-playbook playbook.yml -K
+
+
 ```
 
 ## Tools updated:
