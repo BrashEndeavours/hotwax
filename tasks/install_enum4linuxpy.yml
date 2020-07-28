@@ -19,7 +19,7 @@
 
 - name: Adjust autorecon config to use enum4linuxpy
   replace:
-    path: /opt/autorecon/config/service-scans.toml
+    path: /opt/autorecon/src/autorecon/config/service-scans-default.toml
     regexp: (enum4linux)
     replace: enum4linuxpy
 

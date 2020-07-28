@@ -1,6 +1,6 @@
 ---
 - name: Get igor_mukhin.bash_aliases
-  command: ansible-galaxy install igor_mukhin.bash_aliases
+  command: ansible-galaxy install --roles-path /home/kali/hotwax/roles igor_mukhin.bash_aliases
   register: igor_mukhin
   changed_when: "'is already installed' not in igor_mukhin.stderr"
   failed_when: "'ERROR' in igor_mukhin.stderr"

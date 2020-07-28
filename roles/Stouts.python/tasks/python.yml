@@ -1,0 +1,41 @@
+---
+
+- include: install.deb.yml
+  when: ansible_os_family == 'Debian'
+
+- include: install.yum.yml
+  when: ansible_os_family == 'RedHat'
+
+- file: state=directory name=/usr/share/python
+
+- name: Install pip - pt. 1
+  copy: src=get-pip.py dest=/usr/share/python/get-pip.py
+
+- name: Install pip - pt. 2
+  shell: "{{python_bin}}{{item}} /usr/share/python/get-pip.py creates={{python_pkg_bin}}/pip{{item}}"
+  with_items: "{{ python_versions }}"
+  register: python_pip_installed
+  changed_when: false
+  become: yes
+
+- name: Update tools
+  pip: name="setuptools virtualenv" state=latest executable=pip{{item.item}}
+  environment:
+    PATH: "/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin"
+  when: item.changed
+  with_items: "{{ python_pip_installed.results }}"
+
+- name: Install global python packages
+  pip: name="{{python_install|join(' ')}}" executable={{python_pkg_bin}}/pip{{item}}
+  when: python_install
+  with_items: "{{ python_versions }}"
+
+- name: Install virtualenv
+  pip: name="virtualenv" executable={{python_pkg_bin}}/pip{{item}}
+  with_items: "{{ python_versions }}"
+
+- name: Setup virtualenvs
+  shell: virtualenv {{item.path}} --python={{item.python|default('python')}}
+  args:
+    creates: "{{item.path}}"
+  with_items: "{{ python_virtualenvs }}"

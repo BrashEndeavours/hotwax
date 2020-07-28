@@ -1,0 +1,18 @@
+---
+
+- include_vars: "{{ansible_distribution}}.yml"
+
+- name: Install python-pycurl
+  apt: name=python-pycurl
+
+- name: Add python apt repository
+  apt_repository: repo={{python_ppa}} update_cache=yes
+  when: python_ppa != False and python_ppa != ""
+
+- name: Install python
+  apt: name=python{{item}} state=present
+  with_items: "{{ python_versions }}"
+
+- name: Install python-dev
+  apt: name=python{{item}}-dev state=present
+  with_items: "{{ python_versions }}"

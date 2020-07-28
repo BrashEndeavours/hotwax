@@ -2,6 +2,8 @@
 - name: Converge
   hosts: localhost
   become: yes
+  become_user: root
+  become_method: sudo
   gather_facts: yes
 
   vars_files:
@@ -27,7 +29,7 @@
   - include_tasks: tasks/install_evil-winrm.yml
   - include_tasks: tasks/install_gcc-multilib.yml
   - include_tasks: tasks/install_git.yml
-  - include_tasks: tasks/install_gef.yml
+  #- include_tasks: tasks/install_gef.yml
   - include_tasks: tasks/install_gobuster.yml
   - include_tasks: tasks/install_impacket.yml
   - include_tasks: tasks/install_linenum.yml

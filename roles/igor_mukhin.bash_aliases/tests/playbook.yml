@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  sudo: true
+
+  vars:
+    bash_aliases:
+      - { alias: 'sf', command: 'php app/console2' }
+
+  roles:
+    - "../../igor_mukhin.bash_aliases"

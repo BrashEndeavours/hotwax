@@ -1,0 +1,14 @@
+---
+- name: Ensure sshuttle is installed (Kali).
+  apt:
+    name: "sshuttle"
+    state: present
+
+# - name: Set sshuttle aliases
+#   set_fact:
+#     sshuttle_aliases: 
+#     - { alias: '', command: '' }
+
+# - name: Merge git aliases
+#   set_fact:
+#     bash_aliases: "{{ bash_aliases + sshuttle_aliases }}"

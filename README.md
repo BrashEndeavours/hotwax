@@ -11,6 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * Kali Linux 2019.4 or older.  (Presently, will not work on Kali LInux 2020.1 or newer, due to change from default root account configuration to non-root user account configuration. To be fixed in near future.)
+* **UPDATE** Modified to work on Kali Linux 2020.2a+ See below instructions. (However these changes have not been tested on 2019.4 or older versions and may not longer work)
 
 * Git
 * Ansible
@@ -33,7 +34,14 @@ Run the playbook
 
 ```
 cd hotwax
+
+#for Kali Linux 2019.4 or older:
 ansible-playbook playbook.yml
+
+#for Kali Linux 2020.2a and newer (executed with user part of sudo group, default for "kali" username):
+ansible-playbook playbook.yml -K
+
+
 ```
 
 ## Tools updated:
@@ -44,7 +52,6 @@ ansible-playbook playbook.yml
  - [AutoRecon](https://github.com/Tib3rius/AutoRecon) - AutoRecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
  - [BloodHound](https://github.com/BloodHoundAD/BloodHound) - Six Degrees of Domain Admin.
  - [chisel](https://github.com/jpillora/chisel) - A fast TCP tunnel over HTTP.
- - [Enum4LinuxPy](https://github.com/0v3rride/Enum4LinuxPy) - Everyone's favorite SMB/SAMBA/CIFS enumeration tool ported over to Python.
  - [evil-winrm](https://github.com/Hackplayers/evil-winrm) - The ultimate WinRM shell for hacking/pentesting.
  - [gobuster](https://github.com/OJ/gobuster) - Directory/File, DNS and VHost busting tool written in Go
  - [LinEnum](https://github.com/rebootuser/LinEnum) - Local Linux Enumeration & Privilege Escalation Script 
