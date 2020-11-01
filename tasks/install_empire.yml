@@ -7,6 +7,6 @@
 
 - name: Copy Empire Shell from repository
   git:
-    repo: "https://github.com/EmpireProject/Empire"
+    repo: "https://github.com/BC-SECURITY/Empire"
     dest: /opt/Empire
     update: yes
