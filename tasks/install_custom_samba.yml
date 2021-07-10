@@ -103,7 +103,7 @@
     - nettle-dev
     - patch
     - perl
-    - perl-modules
+    - perl-modules-5.32
     - pkg-config
     - procps
     - psmisc
